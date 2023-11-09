@@ -24,8 +24,14 @@ test('If the name is empty should return Hello, my friend', () => {
   expect(result).toEqual("Hello, my friend");
 });
 
-test('If the name is write in UpperCase should return HELLO, KENOBI', () => {
+test('If the name is write in UpperCase should return HELLO, KENOBI!', () => {
     const result = greet("KENOBI");
     console.log(result);
     expect(result).toEqual("HELLO, KENOBI!");
+  });
+
+test('If the name is an array should return Hello, Kratos and Thanathos', () => {
+    const result = greet(["Kratos", "Thanathos"]);
+    console.log(result);
+    expect(result).toEqual("Hello, Kratos and Thanathos");
   });
