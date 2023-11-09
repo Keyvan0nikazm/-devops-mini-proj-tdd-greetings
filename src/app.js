@@ -1,10 +1,17 @@
 function greet(name){
-    if(name===undefined || name==="" || name===null) return "Hello, my friend";
-    if(name === name.toUpperCase()){
+    if (!name) {
+        return "Hello, my friend";
+    }
+    if(isUpperCase(name)){
         return "HELLO, " + name + "!";
     }
     return "Hello, " + name;
 };
+
+function isUpperCase(name){
+    return name === name.toUpperCase();
+}
+
 
 
 module.exports = greet;
