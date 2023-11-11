@@ -1,10 +1,24 @@
 function greet(name){
 
     if (Array.isArray(name)){
+        let upperCaseName;
+        let stringUpper = "Hello";
+        let arraynamesLowerCase = [];
         if(name.length>=2){
-            return stringConstructor(name);
+            for (let index = 0; index < name.length; index++) {
+                if(isUpperCase(name[index])){
+                    upperCaseName = name[index];
+                }else{
+                    arraynamesLowerCase.push(name[index]);
+                    }
+                }
+            }
+            if(upperCaseName)
+                return stringConstructor(arraynamesLowerCase) + ". AND HELLO " + upperCaseName + "!";
+            else{
+                return stringConstructor(name);
+            }
         }
-    }
 
     else{
         if (!name) {

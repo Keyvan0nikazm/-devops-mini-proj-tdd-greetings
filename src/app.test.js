@@ -36,8 +36,14 @@ test('If the name is an array should return Hello, Kratos and Thanathos', () => 
     expect(result).toEqual("Hello, Kratos and Thanathos");
   });
 
-  test('If the name is an array with more than two should return Hello, Kratos, Thanathos and Hypnos', () => {
+  test('If the name is an array with more than two names should return Hello, Kratos, Thanathos and Hypnos', () => {
     const result = greet(["Kratos", "Thanathos", "Hypnos"]);
     console.log(result);
     expect(result).toEqual("Hello, Kratos, Thanathos and Hypnos");
+  });
+
+  test('If the name is an array with more than two names and one word in upperCase should return Hello, Thanathos and Hypnos. AND HELLO KRATOS!', () => {
+    const result = greet(["KRATOS", "Thanathos","Hypnos"]);
+    console.log(result);
+    expect(result).toEqual("Hello, Thanathos and Hypnos. AND HELLO KRATOS!");
   });
