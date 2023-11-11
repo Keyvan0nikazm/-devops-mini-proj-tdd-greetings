@@ -35,3 +35,9 @@ test('If the name is an array should return Hello, Kratos and Thanathos', () => 
     console.log(result);
     expect(result).toEqual("Hello, Kratos and Thanathos");
   });
+
+  test('If the name is an array with more than two should return Hello, Kratos, Thanathos and Hypnos', () => {
+    const result = greet(["Kratos", "Thanathos", "Hypnos"]);
+    console.log(result);
+    expect(result).toEqual("Hello, Kratos, Thanathos and Hypnos");
+  });
