@@ -2,19 +2,22 @@ function greet(name){
 
     if (Array.isArray(name)){
         let upperCaseName;
-        let stringUpper = "Hello";
-        let arraynamesLowerCase = [];
+        let arrayNamesLowerCase = [];
         if(name.length>=2){
             for (let index = 0; index < name.length; index++) {
                 if(isUpperCase(name[index])){
+                    if(upperCaseName){
+                        return "Impossible because more than 1 uppercase name";
+                    }
                     upperCaseName = name[index];
-                }else{
-                    arraynamesLowerCase.push(name[index]);
+                }
+                else{
+                    arrayNamesLowerCase.push(name[index]);
                     }
                 }
             }
             if(upperCaseName)
-                return stringConstructor(arraynamesLowerCase) + ". AND HELLO " + upperCaseName + "!";
+                return stringConstructor(arrayNamesLowerCase) + ". AND HELLO " + upperCaseName + "!";
             else{
                 return stringConstructor(name);
             }
