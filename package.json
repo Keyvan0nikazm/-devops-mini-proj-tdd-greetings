@@ -6,7 +6,11 @@
   "scripts": {
     "start": "nodemon ./src/app.js",
     "test": "jest --watch",
-    "list": "ls -la"
+    "list": "ls -la",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "prettier": "prettier ./src/ --check",
+    "prettier:fix": "prettier ./src/ --write"
   },
   "keywords": [
     ""
