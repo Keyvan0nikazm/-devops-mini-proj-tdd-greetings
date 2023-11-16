@@ -54,19 +54,19 @@ test('If the name is an array should return Hello, Kratos and Thanathos', () => 
     expect(result).toEqual("Impossible because more than 1 uppercase name");
   });
 
-  test('If the name is an array with more than two names and with a language should return Impossible because more than 1 uppercase name', () => {
+  test('If the name is an array with more than two names and with the language "fr" should Bonjour Kratos et Thanathos.', () => {
     const result = greet(["Kratos", "Thanathos", "fr"]);
     console.log(result);
-    expect(result).toEqual("Bonjour, Kratos et Thanathos.");
+    expect(result).toEqual("Bonjour Kratos et Thanathos.");
   });
 
-  test('If the name is an array with more than two names and with a language should return Impossible because more than 1 uppercase name', () => {
+  test('If the name is an array with more than two names and with the language "nl" should return Goeidag Kratos en Thanathos.', () => {
     const result = greet(["Kratos", "Thanathos", "nl"]);
     console.log(result);
-    expect(result).toEqual("Goeidag, Kratos en Thanathos.");
+    expect(result).toEqual("Goeidag Kratos en Thanathos.");
   });
 
-  test('If the name is an array with more than two names and with a language should return Impossible because more than 1 uppercase name', () => {
+  test('If the name is an array with more than two names and with the language "en" should return Hello, Kratos and Thanathos.', () => {
     const result = greet(["Kratos", "Thanathos", "en"]);
     console.log(result);
     expect(result).toEqual("Hello, Kratos and Thanathos.");

@@ -46,23 +46,24 @@ function isUpperCase(name){
 function stringConstructor(names, language){
     let greetingWord;
     let andConnector;
-        if (!language || language === 'en'){
-        greetingWord = "Hello";
+    if (!language || language === 'en'){
+        greetingWord = "Hello, ";
         andConnector = " and ";
     }
     else if (language === 'fr'){
-        greetingWord = 'Bonjour';
+        greetingWord = 'Bonjour ';
         andConnector = " et ";
     }
     else if (language === "nl"){
-        greetingWord = "Goeidag";
+        greetingWord = "Goeidag ";
         andConnector = " en ";
     }
     
-    for (let index = 0; index < names.length-1; index++) {
-        greetingWord += ", " + names[index];
-    } 
-    return greetingWord + andConnector + names[names.length-1] + ".";
+    // for (let index = 0; index < names.length-1; index++) {
+    //     greetingWord += ", " + names[index];
+    // } 
+    
+    return greetingWord + names.slice(0, names.length -1).join(", ") + andConnector + names[names.length-1] + ".";
 }
 
 
