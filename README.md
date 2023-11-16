@@ -1,3 +1,3 @@
 # -devops-mini-proj-tdd-greetings
 
-Keyvan, Eklou Steven, Barry Mamadou
+groupe n°11 : Keyvan Nikazm, Eklou Steven, Barry Mamadou
