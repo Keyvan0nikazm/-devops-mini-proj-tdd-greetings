@@ -5,7 +5,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Heure de commencement de la pipline date +"%H  %M""
+      - run: echo "Heure de commencement de la pipline $(date +'%H:%M')"
 
 
 
