@@ -11,5 +11,8 @@ jobs:
       - name: installation de node.js
         run: npm install node.js
 
+      - name: installation de npm
+        run: npm install
+
 
 
