@@ -8,5 +8,8 @@ jobs:
       - name: heure de commencement de la pipeline.
         run: echo "Heure de commencement de la pipline $(date +'%H:%M')"
 
+      - name: installation de node.js
+        run: npm install node.js
+
 
 
