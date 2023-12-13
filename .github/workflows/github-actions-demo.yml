@@ -14,7 +14,7 @@ jobs:
       - name: installation de npm
         run: npm install
 
-      - name: installation de prettier
+      - name: formatage avec prettier
         run: npm run prettier:fix
 
 
