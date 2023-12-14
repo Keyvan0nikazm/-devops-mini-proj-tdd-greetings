@@ -13,14 +13,11 @@ jobs:
         with:
           node-version: '14'
 
-      - name: heure de commencement de la pipeline.
+      - name: Heure de commencement de la pipeline.
         run: echo "Heure de commencement de la pipline $(date +'%H:%M')"
 
-      - name: installation de npm
+      - name: Installation de npm
         run: npm install
 
-      - name: affichage scripts
-        run: npm run
-
-      - name: formatage avec prettier
-        run: npm run prettier
+      - name: Formattage avec prettier
+        run: npm run prettier:fix
