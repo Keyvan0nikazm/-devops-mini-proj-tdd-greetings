@@ -5,13 +5,16 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: heure de commencement de la pipeline.
-        run: echo "Heure de commencement de la pipline $(date +'%H:%M')"
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '14'
+
+      - name: heure de commencement de la pipeline.
+        run: echo "Heure de commencement de la pipline $(date +'%H:%M')"
 
       - name: installation de npm
         run: npm install
