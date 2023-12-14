@@ -27,3 +27,6 @@ jobs:
         
       - name: Test du code
         run: npm run test
+
+      - name: build le code 
+        run: webpack ./src/app.js -o dist/
