@@ -29,4 +29,11 @@ jobs:
         run: npm run test
 
       - name: build le code 
-        run: webpack ./src/app.js -o dist/
+        run: npm run build
+
+      - name: Heure de fin de la pipeline.
+        run: echo "Heure de commencement de la pipline $(date +'%H:%M')"
+
+      - name: Affichage du message de succès
+        if: failure() == false
+        run: echo "PIPELINE SUCCESS WITHOUT ERRORS"
