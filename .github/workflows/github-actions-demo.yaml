@@ -8,8 +8,10 @@ jobs:
       - name: heure de commencement de la pipeline.
         run: echo "Heure de commencement de la pipline $(date +'%H:%M')"
 
-      - name: installation de node.js
-        run: npm install node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
 
       - name: installation de npm
         run: npm install
@@ -19,6 +21,3 @@ jobs:
 
       - name: formatage avec prettier
         run: npm run prettier
-
-
-
