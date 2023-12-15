@@ -43,25 +43,39 @@ Liens utiles:
 
 - Décrivez brièvement ce que fait votre fichier YML.  
 ```bash
-<votre réponse ici>
+
+< "Le fichier YAML décrit une pipeline d'intégration continue à l'aide de GitHub Actions. La pipeline s'exécute sur les événements de push (sauf sur la branche principale) et de pull request sur la branche principale. Les étapes comprennent la configuration de l'environnement, l'affichage de l'heure de début et de fin, l'installation des dépendances, le formattage du code avec Prettier, le linting du code, les tests avec Jest (avec un seuil de couverture de 80%), la construction du code, et enfin l'affichage d'un message de succès si la pipeline est réussie.">
 ```
 - En particulier : à quoi sert le “on” ? dans votre fichier YML ?  Quelle est la différence entre “on push” et “on pull request”. Que conseilleriez-vous comme option parmi ces 2 options à un groupe de développeurs junior ? Pourquoi ? 
 ```bash
-<votre réponse ici>
+
+<"Le 'on' spécifie les événements déclencheurs de la pipeline. 'on push' déclenche la pipeline lorsqu'un commit est poussé (sauf sur la branche principale), tandis que 'on pull_request' déclenche la pipeline lorsqu'une pull request est ouverte ou mise à jour sur la branche principale. Pour les développeurs juniors, il est recommandé d'utiliser 'on pull_request' car cela permet de tester le code avant qu'il ne soit fusionné dans la branche principale, aidant ainsi à détecter les erreurs plus tôt dans le processus de développement.">
 ```
+
 - Quelle est la différence entre run et run_on ?  Expliquez par rapport à votre pipeline.  
 ```bash
-<votre réponse ici>
+
+<"1) runs-on: La clé 'runs-on' est utilisée pour spécifier l'environnement d'exécution global pour toutes les étapes d'une job. Dans votre pipeline, 'runs-on: ubuntu-latest' indique que toutes les étapes de la job s'exécuteront sur une machine virtuelle avec le système d'exploitation Ubuntu de la dernière version disponible.
+
+  2) run: La clé 'run' est utilisée à l'intérieur d'une étape spécifique pour spécifier les commandes à exécuter. Chaque occurrence de la commande 'run' représente une étape individuelle de la job. Dans votre pipeline, chaque bloc - name avec une commande run représente une étape particulière où les commandes spécifiées seront exécutées.
+
+En résumé, 'runs-on' détermine l'environnement global de l'ensemble de la job, tandis que 'run' spécifie les commandes à exécuter à l'intérieur d'une étape spécifique de cette job.">
 ```
+
 - Quelle est la différence entre “use” et “run”. Expliquez par rapport à votre pipeline. 
 ```bash
-<votre réponse ici>
+<"Dans le contexte de GitHub Actions, 'uses' est utilisé pour spécifier une action GitHub ou un script personnalisé à exécuter, tandis que 'run' est utilisé pour exécuter une commande directement dans le shell de la machine virtuelle. Dans la pipeline fournie, 'uses' est utilisé pour inclure des actions préexistantes telles que 'actions/checkout' et 'actions/setup-node', tandis que 'run' est utilisé pour les commandes spécifiques à exécuter, comme l'affichage de l'heure, l'installation des dépendances, etc.">
 ```
+
 - Peut-on intervertir différentes étapes dans votre pipeline ? Que votre réponse soit oui ou non, expliquez par rapport à votre pipeline. 
 ```bash
-<votre réponse ici>
+<"Oui, les étapes peuvent être réorganisées dans la pipeline, mais cela doit être fait avec précaution. Par exemple, le formattage du code et le linting du code peuvent généralement être intervertis sans problème, car ce sont des tâches indépendantes. Cependant, certaines étapes, comme les tests, doivent être exécutées après le formattage et le linting pour garantir que le code testé est bien formaté et linté.">
 ```
+
 - Je veux ajouter un test de sécurité sur mon pipeline en exécutant le programme secure_app. Que devrais-je faire ?  Quelles questions devriez-vous vous poser ? 
 ```bash
-<votre réponse ici>
-```
+<"Pour ajouter un test de sécurité, vous pouvez créer une nouvelle étape dans votre pipeline qui exécute le programme secure_app. Voici ce que vous pouvez faire :
+
+1) Ajoutez une nouvelle étape après les étapes existantes.
+2) Utilisez la commande 'run' pour exécuter le programme secure_app.
+3) Assurez-vous que les dépendances nécessaires pour exécuter secure_app sont installées dans l'étape appropriée (peut-être dans l'étape 'Installation de npm' si elles sont basées sur Node.js).">
